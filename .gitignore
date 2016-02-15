@@ -16,3 +16,7 @@ target/
 *~
 *.iml
 *.DS_Store
+
+.settings/
+.project
+.classpath

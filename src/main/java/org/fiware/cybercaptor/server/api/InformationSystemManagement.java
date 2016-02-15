@@ -104,6 +104,12 @@ public class InformationSystemManagement {
             processBuilder.environment().put("MULVALROOT", mulvalPath);
             String path = System.getenv("PATH");
             processBuilder.environment().put("PATH", mulvalPath + "/utils/:" + xsbPath + ":" + path);
+            StringBuilder command = new StringBuilder();
+            for (String str : processBuilder.command())
+                command.append(str + " ");
+            Logger.getAnonymousLogger().log(Level.INFO, "Launch MulVAL with command : \n" + command.toString());
+            processBuilder.redirectOutput(new File(ProjectProperties.getProperty("output-path") + "/mulval.log"));
+            processBuilder.redirectError(new File(ProjectProperties.getProperty("output-path") + "/mulval.log"));
             Process process = processBuilder.start();
             process.waitFor();
 
@@ -157,6 +163,12 @@ public class InformationSystemManagement {
             processBuilder.environment().put("MULVALROOT", mulvalPath);
             String path = System.getenv("PATH");
             processBuilder.environment().put("PATH", mulvalPath + "/utils/:" + xsbPath + ":" + path);
+            StringBuilder command = new StringBuilder();
+            for (String str : processBuilder.command())
+                command.append(str + " ");
+            Logger.getAnonymousLogger().log(Level.INFO, "Launch MulVAL with command : \n" + command.toString());
+            processBuilder.redirectOutput(new File(ProjectProperties.getProperty("output-path") + "/mulval.log"));
+            processBuilder.redirectError(new File(ProjectProperties.getProperty("output-path") + "/mulval.log"));
             Process process = processBuilder.start();
             process.waitFor();
 
