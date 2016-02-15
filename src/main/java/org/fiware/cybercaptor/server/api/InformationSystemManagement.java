@@ -151,7 +151,7 @@ public class InformationSystemManagement {
                 mulvalOutputFile.delete();
             }
 
-            Logger.getAnonymousLogger().log(Level.INFO, "Launching MulVAL");
+            Logger.getAnonymousLogger().log(Level.INFO, "Launching MulVAL with already generated input file");
             ProcessBuilder processBuilder = new ProcessBuilder(mulvalPath + "/utils/graph_gen.sh", mulvalInputFile.getAbsolutePath(), "-l");
 
             if (ProjectProperties.getProperty("mulval-rules-path") != null) {
