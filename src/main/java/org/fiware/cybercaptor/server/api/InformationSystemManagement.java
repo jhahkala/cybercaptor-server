@@ -273,7 +273,7 @@ public class InformationSystemManagement {
                     "--hosts-interfaces-file", hostInterfacePath,
                     "--vlans-file", vlansPath,
                     "--flow-matrix-file", flowMatrixPath,
-                    "--vulnerability-scan", vulnerabilityScanPath,
+                    "--openvas-scan", vulnerabilityScanPath,
                     "--routing-file", routingPath,
                     "--mulval-output-file", mulvalInputFile.getAbsolutePath(),
                     "--to-fiware-xml-topology", topologyPath

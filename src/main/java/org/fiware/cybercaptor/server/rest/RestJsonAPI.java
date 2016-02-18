@@ -165,8 +165,11 @@ public class RestJsonAPI {
 
         AttackGraph attackGraph = InformationSystemManagement.prepareInputsAndExecuteMulVal(informationSystem);
 
-        if (attackGraph == null)
+        if (attackGraph == null){
+            Logger.getAnonymousLogger().log(Level.INFO, "the attack graph is empty");
+
             return RestApplication.returnErrorMessage(request, "the attack graph is empty");
+        }
         Logger.getAnonymousLogger().log(Level.INFO, "Launch scoring function");
         attackGraph.loadMetricsFromTopology(informationSystem);
 
